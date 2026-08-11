@@ -1,0 +1,45 @@
+# ============================================================
+# temp-mail-worker — deploy ke mute-wind-b06d (pondok77.web.id)
+# Cara pakai:
+#   cd temp-mail-worker
+#   wrangler login                       # sekali saja (browser)
+#   wrangler kv namespace create TEMP_MAIL_KV   # buat KV baru (sekali)
+#   # → tempel ID hasilnya ke [[kv_namespaces]] di bawah
+#   wrangler deploy
+#
+# Catatan: PASTIKAN wrangler login memakai AKUN Cloudflare yang
+# memiliki worker mute-wind-b06d (subdomain argamanurung2.workers.dev).
+# ============================================================
+name = "mute-wind-b06d"
+main = "worker.js"
+compatibility_date = "2025-06-01"
+
+# Domain email yang dilayani worker — WAJIB pondok77.web.id
+# (bukan manurung.biz.id seperti versi billowing).
+[vars]
+DOMAIN = "pondok77.web.id"
+
+# ============================================================
+# KV NAMESPACE — WAJIB (tempat simpan email).
+# Ganti id di bawah dengan hasil `wrangler kv namespace create`
+# atau ID namespace yang sudah ada di dashboard Cloudflare.
+# ============================================================
+[[kv_namespaces]]
+binding = "KV"
+id = "GANTI_DENGAN_KV_NAMESPACE_ID"
+
+# ============================================================
+# DURABLE OBJECT — SANGAT DISARANKAN.
+# Tanpa DO, mode KV punya cache 60 detik: email baru baru terbaca
+# setelah ±60s (polling 5s tetap dapat hasil lama). Dengan DO,
+# inbox instan. Kalau tidak mau/ bisa DO, hapus 3 blok di bawah
+# ini — worker otomatis fallback ke mode KV.
+# ============================================================
+# [durable_objects]
+# bindings = [
+#   { name = "MAILBOX", class_name = "Mailbox" }
+# ]
+
+# [[migrations]]
+# tag = "v1"
+# new_sqlite_classes = ["Mailbox"]

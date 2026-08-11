@@ -1,0 +1,39 @@
+{
+  "jumlahAkun": 1,
+  "headless": false,
+  "signupUrl": "https://accounts.x.ai/sign-up?redirect=grok-com",
+  "tempmailBaseUrl": "https://GANTI.subdomain.workers.dev",
+  "domain": "GANTI_DOMAIN.web.id",
+  "prefixEmail": "grok",
+  "pollTimeoutMs": 300000,
+  "capsolverApiKey": "",
+  "useSolver": false,
+  "turnstileSolverUrl": "",
+  "namaDepan": [
+    "Rizky", "Bima", "Adi", "Eka", "Yoga", "Fajar", "Dimas", "Reza",
+    "Andi", "Budi", "Candra", "Dewi", "Gilang", "Hendra", "Ilham", "Joko",
+    "Kevin", "Lukman", "Mahesa", "Nanda", "Oki", "Putra", "Rangga", "Satria",
+    "Taufik", "Umar", "Vino", "Wahyu", "Yudha", "Zaki", "Agus", "Bayu"
+  ],
+  "namaBelakang": [
+    "Pratama", "Saputra", "Nugraha", "Ramadhan", "Wijaya", "Hidayat", "Kurniawan", "Maulana",
+    "Anggara", "Cahyono", "Darmawan", "Firmansyah", "Gunawan", "Hartanto", "Iskandar", "Jaya",
+    "Kusuma", "Laksana", "Mulyadi", "Nugroho", "Purnama", "Rahmawan", "Santoso", "Tanjung",
+    "Utama", "Wicaksono", "Yulianto", "Zulkarnain", "Siregar", "Nasution", "Halim", "Pratama"
+  ],
+  "passwordPanjang": 14,
+  "browserMode": "cdp",
+  "cdpUrl": "http://127.0.0.1:9223",
+  "bravePath": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+  "braveProfile": ".chrome-profile",
+  "nineRouterBaseUrl": "http://127.0.0.1:20128",
+  "nineRouterPassword": "GANTI_PASSWORD_9ROUTER",
+  "appPort": 56121,
+  "nineRouterApiKey": "",
+  "injectMode": "api",
+  "injectProvider": "grok-cli",
+  "delayAntarAkunDetik": [0, 0],
+  "retryDelayMs": 0,
+  "maxRetries": 2,
+  "cookiesDir": "cookies"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "grok-farm",
+  "version": "0.1.0",
+  "description": "Farm akun Grok/xAI: signup otomatis (tempmail + Turnstile solver) -> inject ke 9Router -> save cookies",
+  "type": "module",
+  "scripts": {
+    "start": "node grok_farm.js",
+    "check": "node --check grok_farm.js && node --check src/state.js && node --check src/tempmail.js && node --check src/solver.js && node --check src/cloudflare.js && node --check src/signup.js && node --check src/inject.js && node --check src/save.js && node --check src/browser.js && node --check cek-otp.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "playwright": "^1.62.1"
+  }
+}

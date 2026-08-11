@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tes Widget Turnstile Lokal</title>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <style>
+    body { font-family: sans-serif; padding: 40px; }
+    h2 { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h2>Tes Widget Turnstile (sitekey tes Cloudflare)</h2>
+  <div id="widget"></div>
+  <p id="status">memuat...</p>
+  <script>
+    // Sitekey tes Cloudflare "3x00000000000000000000FF" = FORCES interactive
+    // challenge — widget menampilkan checkbox "Verify you are human" yang
+    // menunggu interaksi (docs: developers.cloudflare.com/turnstile/troubleshooting/testing/).
+    window.onload = function () {
+      try {
+        turnstile.render(document.getElementById("widget"), {
+          sitekey: "3x00000000000000000000FF",
+          callback: function (token) {
+            document.getElementById("status").textContent = "TOKEN: " + token.slice(0, 40) + "...";
+          },
+          "error-callback": function (code) {
+            document.getElementById("status").textContent = "ERROR: " + code;
+          },
+        });
+        document.getElementById("status").textContent = "widget di-render, menunggu...";
+      } catch (e) {
+        document.getElementById("status").textContent = "GAGAL render: " + e.message;
+      }
+    };
+  </script>
+</body>
+</html>

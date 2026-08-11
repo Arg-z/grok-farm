@@ -1,0 +1,34 @@
+# ============================================================
+# grok-farm — .gitignore
+# Semua data akun/sesi/rahasia TIDAK ikut ter-upload,
+# termasuk ke repo PRIVAT sekalipun.
+# ============================================================
+
+# Dependencies
+node_modules/
+
+# ⛔ DATA AKUN & SESI (rahasia — jangan pernah di-upload)
+grok_accounts.json
+cookies/
+backup-*/
+
+# Konfigurasi lokal (berisi password dashboard 9Router)
+config.json
+
+# Profil browser (berisi sesi login x.ai)
+.brave-profile/
+.chrome-profile/
+
+# Solver lokal pihak ketiga (EzSolver — berisi venv besar)
+ezsolver/
+
+# Log & file sementara
+*.log
+tmp-*.py
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Artefak analisis kode (graphify)
+graphify-out/
